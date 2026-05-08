@@ -1,6 +1,7 @@
 const express = require('express');
 
 const connectDatabase = require('./config/database');
+const limiter = require('./config/rate-limit.js');
 const Pessoa = require('./models/Pessoa');
 
 const app = express();
