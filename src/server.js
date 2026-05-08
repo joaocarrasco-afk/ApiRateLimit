@@ -1,21 +1,10 @@
 const express = require('express');
-const rateLimit = require("express-rate-limit");
 
 const connectDatabase = require('./config/database');
 const Pessoa = require('./models/Pessoa');
 
 const app = express();
 const PORT = 3000;
-
-const limiter = rateLimit(
-  {
-  windowMs: 60 * 1000, // 1 minuto
-  max: 5, // 5 requisições
-  message: "Muitas requisições, tente novamente depois. Afonso RGM 0000"
-}
-);
-
-app.use(limiter);
 
 app.use(express.json());
 
